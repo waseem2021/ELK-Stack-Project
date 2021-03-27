@@ -78,4 +78,40 @@ The following screenshot displays the result of running `docker ps` after succes
 
 [Link to sudo_docker_ps screenshot](https://github.com/waseem2021/ELK-Stack-Project/blob/main/Diagrams/sudo_docker_ps.JPG)
 
+Target Machines & Beats
+
+ELK server is configured to monitor following machines
+
+| Name  | IP Address         |
+|-------|--------------------|
+| Web 1 | 10.0.0.12          |
+| Web 2 | 10.0.0.13          |
+
+We have installed the following Beats on these machines:
+
+Filebeat
+
+These Beats allow us to collect the following information from each machine:
+
+Filebeat - Filebeat detects changes to the filesystem. We are using this to monitor our Web Log data.
+
+ansible-playbook elk-playbook.yml
+
+ansible-playbook filebeat-playbook.yml
+
+Using the Playbook In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
+SSH into the control node and follow the steps below:
+
+Copy the .yml files to /etc/ansible directory.
+Update the hosts file to be as follows. This will assign the VM servers to their server groups for the Ansible Playbooks.
+   [webservers]
+    10.0.0.12
+    10.0.0.13
+   [elkservers]
+    10.1.0.4
+
+Run the playbooks and install ELK, Filebeat run the following:
+cd /etc/ansible
+ansible-playbook elk-playbook.yml
+ansible-playbook filebeat-playbook.yml
 
