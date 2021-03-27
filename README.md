@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
-[Link to Filebeat playbook]()
+[Link to Filebeat playbook](https://github.com/waseem2021/ELK-Stack-Project/blob/main/Diagrams/ELKStackNetworkDiagram.JPG)
 
 This document contains the following details:
 - Description of the Topology
@@ -46,7 +46,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the  Jumpbox Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-5061 Kibana port
+68.59.39.173
 
 
 Machines within the network can only be accessed by peer servers.
@@ -55,11 +55,12 @@ Jump-Box-Provisioner (10.0.0.7)
 A summary of the access policies in place can be found in the table below.
 
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name     | Publicly Accessible | Allowed IP Address |
+|----------|---------------------|--------------------|
+| Jump Box | Yes                 | 68.59.39.173       |
+| Web 1    | No                  | 10.0.0.1-254       |
+| Web 2    | No                  | 10.0.0.1-254       |
+| ELK      | No                  | 10.0.0.1-254       |
 
 ### Elk Configuration
 
