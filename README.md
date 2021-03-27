@@ -115,3 +115,18 @@ cd /etc/ansible
 ansible-playbook elk-playbook.yml
 ansible-playbook filebeat-playbook.yml
 
+Kibana activities:
+
+Mass SSH Logins
+1. Ran SSH command in my jumpbox - ssh RedTeamAdmin@10.0.0.12
+2. An error was also logged and sent to Kibana.
+3. Ran the failed SSH command in a loop - for i in {1..1000}; do ssh sysadmin@10.0.0.12; done
+4. Located the failed login attempts in Kibana
+5. Repeated the above steps for my second VM - 10.0.0.13
+
+View Kibana log after Linux Stress 
+1. From Jump-Box, started up Ansible container and attached to it.
+2. SSH from Ansible container to one of my WebVM's.
+3. Run sudo apt install stress to install the stress program.
+4. Run sudo stress --cpu 1 and allow stress to run for a few minutes.
+5. Viewed the Metrics page for that VM in Kibana and there was CPU usage increase.
