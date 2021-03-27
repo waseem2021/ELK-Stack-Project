@@ -76,6 +76,6 @@ Ansible playbooks are used to install the ELK stack container on the ELK server 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+[Link to sudo_docker_ps screenshot](https://github.com/waseem2021/ELK-Stack-Project/blob/main/Diagrams/sudo_docker_ps.JPG)
 
 
